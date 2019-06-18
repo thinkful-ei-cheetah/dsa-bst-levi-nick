@@ -1,0 +1,31 @@
+const BinarySearchTree = require('./bst.js')
+
+function distribute(arr){
+  if(arr.length === 1){
+    return new BinarySearchTree(arr[0])
+  }
+
+  let middle = null
+  if(arr.length % 2 === 0){
+    middle = (arr.length / 2) + 0.5
+  }
+  else{
+    middle = arr.length / 2
+  }
+
+  let tree = new BinarySearchTree(arr[middle])
+
+  let leftArr = arr.slice(middle, arr.length - 1)
+  let rightArr = arr.slice(0, middle)
+
+  if(leftArr.length){
+    tree.left = new BinarySearchTree(leftArr)
+    tree.left.parent = tree
+  }
+  if(rightArr.length){
+    tree.right = new BinarySearchTree(rightArr)
+    tree.right.parent = tree
+  }
+  
+  return tree
+}
