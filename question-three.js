@@ -2,23 +2,24 @@ const BinarySearchTree = require('./bst')
 const height = require('./height')
 const isBst = require('./is-bst')
 const isBalanced = require('./is-balanced')
+const findThirdLargest = require('./find-third-largest')
 
 function main() {
   const bst = new BinarySearchTree()
 
   const int = [
-    3, 1, 4, 6, 9, 2, 5
+    3, 1, 4, 6, 9, 2, 5, 7, 8
   ]
   const str = [
     'E', 'A', 'S', 'Y', 'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'
   ]
 
-  int.forEach(i => {
-    bst.insert(i, i)
-  })
-  // str.forEach(l => {
-  //   bst.insert(l, l)
+  // int.forEach(i => {
+  //   bst.insert(i, i)
   // })
+  str.forEach(l => {
+    bst.insert(l, l)
+  })
 
   // Binary Search Tree
   // console.log(bst)
@@ -35,7 +36,10 @@ function main() {
   // console.log(isBst(bst))
 
   // Checking isBalanced(tree)
-  console.log(isBalanced(bst))
+  // console.log(isBalanced(bst))
+
+  // Checking find third largest
+  console.log(findThirdLargest(bst)) 
 }
 
 function tree(t){

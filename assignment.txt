@@ -7,6 +7,8 @@ Given [ 3, 1, 4, 6, 9, 2, 5, 7 ]
 ---|2|------|6|
 -----------|5||9|
 -------------|7|
+--------------|8|
+
 
 Given [ E, A, S, Y, Q, U, E, S, T, I, O, N ]
 --------|E|
@@ -160,3 +162,44 @@ function isBalanced(tree) {
   //  return depth
 }
 
+find 3rd largest =============================================
+
+find3rd(tree)
+
+while(tree.right !== null){
+  tree = tree.right
+}
+
+// tree == largest node
+
+if tree has left child   // we know 2nd largest is downward
+  tree = tree.left
+  while(tree.right !== null){  // get 2nd largest
+    tree = tree.right
+  }
+  if this subtree(2nd largest) has a left child
+    tree = tree.left
+    while(tree.right !== null){
+      tree = tree.right
+    }
+  else{
+    is tree.parent > tree{
+      tree = tree.parent.parent
+    }
+    else{
+      tree = tree.parent
+    }
+  }
+
+else{
+  tree = tree.parent //  2nd largest
+  if tree(2nd) has left child
+    tree = tree.left
+    while(tree.right !== null){
+      tree = tree.right
+    }
+  else{
+    tree = tree.parent
+  }
+}
+return tree
