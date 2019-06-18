@@ -1,27 +1,41 @@
 const BinarySearchTree = require('./bst')
 const height = require('./height')
+const isBst = require('./is-bst')
+const isBalanced = require('./is-balanced')
 
 function main() {
   const bst = new BinarySearchTree()
 
   const int = [
-    3, 1, 4, 6, 9, 2, 5, 7
+    3, 1, 4, 6, 9, 2, 5
   ]
   const str = [
     'E', 'A', 'S', 'Y', 'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'
   ]
 
-  // int.forEach(i => {
-  //   bst.insert(i, i)
-  // })
-  str.forEach(l => {
-    bst.insert(l, l)
+  int.forEach(i => {
+    bst.insert(i, i)
   })
-  console.log(bst)
+  // str.forEach(l => {
+  //   bst.insert(l, l)
+  // })
+
+  // Binary Search Tree
+  // console.log(bst)
+  
+  // Checking tree(t)
   // console.log(tree(bst))
-  console.log(height(bst))
-  bst.remove('E')
-  console.log(height(bst))
+
+  // Checking height(tree)
+  // console.log(height(bst))
+  // bst.remove('E')
+  // console.log(height(bst))
+
+  // Checking isBst(tree)
+  // console.log(isBst(bst))
+
+  // Checking isBalanced(tree)
+  console.log(isBalanced(bst))
 }
 
 function tree(t){

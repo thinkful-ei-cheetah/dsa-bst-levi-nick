@@ -54,19 +54,109 @@ function height(tree){
   // check are we at a leaf
     // if so, return 1
 
-  // let itteration = 1
+  // let iteration = 1
 
   // do we have 2 children
     // let left = height(tree.left)
     // let right = height(tree.right)
-    // if(left > right) itteration += left
-    // else itteration += right
+    // if(left > right) iteration += left
+    // else iteration += right
 
   // do we have a left child?
-    // itteration += height(tree.left)
+    // iteration += height(tree.left)
 
   // do we have a right child?
-    // itteration += height(tree.right)
+    // iteration += height(tree.right)
 
-  return itteration
+  return iteration
 }
+
+Is is a BST?=========================================================
+
+// ASSUMPTION (binary tree):
+//  - each node can have 0, 1, or 2 child node(s)
+//  - each node can have 0 or 1 parent(s)
+//  - only 1 node can have 0 parent
+//  - no duplicates!
+
+// DETERMINE (binary SEARCH tree):
+//  - every left child is less than its parent
+//  - every right child is greater than its parent
+
+
+function isBst(tree) {
+  // define a result var and set it to true
+
+  // is it a root && leaf node
+  //  return result
+
+  // leaf node (if !tree.left && !tree.right)
+  //  return result
+
+  // if tree.left exists
+  //  if tree.left is greater than tree.key
+  //    return false
+  //  else
+        result = isBst(tree.left)
+
+  // if tree.right exists
+  //  if tree.right is greater than tree.key
+  //    return false
+  //  else
+  //    result = isBst(tree.right)
+
+  // return result
+}
+
+Balanced BST=========================================================
+
+Write an algorithm that checks if a BST is balanced 
+(i.e., a tree where no 2 leaves differ in distance from the root by more than 1).
+
+
+// ASSUMPTION (bst):
+//  - 
+
+function isBalanced(tree) {
+  // if it has no parent AND is a leaf (single node tree)
+  //  return true
+  
+  // if it is a leaf
+  //  return 1
+
+  // define depth to be 1
+
+  // if 2 children
+  //  recurse on left child and save as left //false
+  //  recurse on right child and save as right // 1
+  //  
+  //  if either left or right returned 'false'
+  //    return false
+  //  
+  //  if(Math.abs(left - right) > 1)
+  //    return false
+  //  else if (left > right)
+  //    increment depth by left
+  //  else
+  //    increment depth by right
+
+  // else if tree.left exists
+  //  define left and set as return from recurse on left child
+  //  if left is 'false'
+  //    return false
+  //  else
+  //    depth += left
+
+  // else if tree.right exists
+  //  define right and set as return from recurse on right child
+  //  if right is 'false'
+  //    return false
+  //  else
+  //    depth += right
+
+  // if in root
+  //  return true
+  // else 
+  //  return depth
+}
+
