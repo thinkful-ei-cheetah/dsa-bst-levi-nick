@@ -1,0 +1,72 @@
+Draw a BST=========================================================
+
+Given [ 3, 1, 4, 6, 9, 2, 5, 7 ]
+
+-----|3|
+--|1|-----|4|
+---|2|------|6|
+-----------|5||9|
+-------------|7|
+
+Given [ E, A, S, Y, Q, U, E, S, T, I, O, N ]
+--------|E|
+--|A|---------|S|
+----------|Q|------|Y|
+--------|E|------|U|
+---------|I|----|S|
+-----------|O|---|T|
+----------|N|
+
+Remove the Root====================================================
+
+Given [ 3, 1, 4, 6, 9, 2, 5, 7 ]
+
+-----|4|
+--|1|-----|6|
+---|2|---|5||9|
+-----------|7|
+
+Given [ E, A, S, Y, Q, U, E, S, T, I, O, N ]
+--------|E|
+--|A|---------|S|
+----------|Q|------|Y|
+--------|I|------|U|
+---------|O|----|S|
+--------|N|------|T|
+
+What does this program do?===========================================
+
+function tree(t){
+    if(!t){
+        return 0;
+    }
+    return tree(t.left) + t.value + tree(t.right)
+}
+
+  + It will concatenate the values of all nodes in a tree at and below
+    the starting node, in addition to 0s for both the left and right 
+    children of the leaf nodes. If the values are numbers, it will return 
+    the sum
+
+Height of a BST=====================================================
+
+function height(tree){
+  // check are we at a leaf
+    // if so, return 1
+
+  // let itteration = 1
+
+  // do we have 2 children
+    // let left = height(tree.left)
+    // let right = height(tree.right)
+    // if(left > right) itteration += left
+    // else itteration += right
+
+  // do we have a left child?
+    // itteration += height(tree.left)
+
+  // do we have a right child?
+    // itteration += height(tree.right)
+
+  return itteration
+}
